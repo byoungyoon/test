@@ -26,7 +26,6 @@ export default function Page({ params }: Props) {
   return (
     <div className={styles.container}>
       <Suspense fallback={<div>Loading...</div>}>
-        {/* @ts-expect-error Async Server Component */}
         <KeywordDetailSuspense {...currParams}>
           <div className={styles.section}>
             <section className={styles.titleContainer}>
