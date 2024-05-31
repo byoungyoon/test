@@ -1,6 +1,6 @@
 import cx from 'classnames';
 import * as React from 'react';
-import '@/styles/globals.css.ts';
+import '@/styles/globals.css';
 
 import '@/styles/style.css';
 import * as styles from './root.css';
