@@ -5,15 +5,13 @@ import { useEffect, useState } from 'react';
 export default function CustomTImer() {
   const [timer, setTimer] = useState(0);
 
-  const onTimer = (seconds: number) => () => {
+  const onCommand = (command: string) => () => {
     if (!window.TimerRequestChannel) return;
 
-    window.TimerRequestChannel.postMessage(seconds.toString());
+    window.TimerRequestChannel.postMessage(command);
   };
 
   useEffect(() => {
-    if (!window.updateTimer) return;
-
     window.updateTimer = (remainingTime: number) => {
       setTimer(remainingTime);
     };
@@ -22,11 +20,20 @@ export default function CustomTImer() {
   return (
     <div>
       <div>{timer} 남음</div>
-      <button type="button" onClick={onTimer(60 + 40)}>
-        1:40 타이머
+      <button type="button" onClick={onCommand('start:10')}>
+        ０:10 타이머
       </button>
-      <button type="button" onClick={onTimer(2 * 60 + 50)}>
+      <button type="button" onClick={onCommand('start:170')}>
         2:50 타이머
+      </button>
+      <button type="button" onClick={onCommand('pause')}>
+        pause
+      </button>
+      <button type="button" onClick={onCommand('resume')}>
+        resume
+      </button>
+      <button type="button" onClick={onCommand('reset:100')}>
+        reset (1:40)
       </button>
     </div>
   );
