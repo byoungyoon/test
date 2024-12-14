@@ -1,5 +1,10 @@
-import { redirect } from "next/navigation";
+import CustomGroup from "@/app/_component/CustomGroup";
+import * as styles from "./page.css";
 
 export default function Home() {
-  redirect("/timer/i");
+  return (
+    <main className={styles.container()}>
+      <CustomGroup />
+    </main>
+  );
 }
