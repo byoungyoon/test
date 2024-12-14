@@ -1,3 +1,11 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  "extends": [
+    "next/core-web-vitals",  // Next.js 기본 ESLint 규칙
+    "prettier"  // Prettier와 충돌하지 않도록 설정
+  ],
+  "plugins": ["prettier"],  // Prettier 플러그인 활성화
+  "rules": {
+    "prettier/prettier": ["error", { "singleQuote": false, "semi": true }],  // Prettier 규칙 적용
+    "react-hooks/exhaustive-deps": "off"
+  }
 }

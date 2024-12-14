@@ -1,5 +1,6 @@
-import CustomTImer from '@/app/_component/CustomTImer';
+import Image from "next/image";
+import * as styles from "./page.css";
 
 export default function Home() {
-  return <CustomTImer />;
+  return <main className={styles.container()}></main>;
 }
