@@ -17,7 +17,7 @@ type Props = {
 
 export default function CustomInitAnimate({ children }: Props) {
   const pathname = usePathname();
-  const endPoint = useMemo(() => pathname.endsWith("end") | pathname.endsWith("feedback"), [pathname]);
+  const endPoint = useMemo(() => pathname.endsWith("end") || pathname.endsWith("feedback"), [pathname]);
 
   return (
     <AnimatePresence>

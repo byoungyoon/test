@@ -16,7 +16,7 @@ export default function CustomTimerAction() {
 
   const tick = () => {
     const now = new Date();
-    const timeRemaining = Math.max(Math.floor((ref.current?.getTime() - now.getTime()) / 1000), 0);
+    const timeRemaining = Math.max(Math.floor(((ref.current?.getTime() ?? 0) - now.getTime()) / 1000), 0);
 
     setCurrTime(timeRemaining);
 

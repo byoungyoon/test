@@ -1,6 +1,5 @@
-import Image from "next/image";
-import * as styles from "./page.css";
+import { redirect } from "next/navigation";
 
 export default function Home() {
-  return <main className={styles.container()}></main>;
+  redirect("/timer/i");
 }

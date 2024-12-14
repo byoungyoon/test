@@ -7,7 +7,7 @@ type Props = {
 export default function CustomTitle({ name }: Props) {
   return (
     <h3 className={styles.title()}>
-      {name}의 '익힘정도'는 <br /> 어떠셨나요?
+      {name}의 &apos;익힘정도&apos;는 <br /> 어떠셨나요?
     </h3>
   );
 }
